@@ -13,7 +13,43 @@ namespace P_PilhaDinamica
         public PilhaLivros()
         {
             TOPO = null;
-            Console.WriteLine("pilha criada com sucesso!");
+            Console.WriteLine("Pilha criada com sucesso!\n");
+        }
+
+        public void Push(Livro aux)
+        {
+            if (Vazia())
+                TOPO = aux;
+            else
+            {
+                aux.Anterior = TOPO;
+                TOPO = aux;
+            }
+        }
+
+        public void Print()
+        {
+            if (Vazia())
+                Console.WriteLine("Pilha Vazia!");
+            else
+            {
+                Livro aux = TOPO;
+                do
+                {
+                    Console.WriteLine(aux.ToString());
+                    aux = aux.Anterior;
+
+                } while (aux != null);
+                Console.WriteLine("\nFIN DA IMPRESSÃO!");
+            }
+        }
+
+        private bool Vazia()
+        {
+            if (TOPO == null)
+                return true;
+            else
+                return false;
         }
     }
 }
