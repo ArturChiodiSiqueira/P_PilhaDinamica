@@ -85,7 +85,7 @@ namespace P_PilhaDinamica
                 {
                     if (aux.Titulo == titulo)
                     {
-                        Console.WriteLine("Livro localizado:");
+                        Console.WriteLine("Livro localizado!");
                         Console.WriteLine(aux.ToString());
                         Console.WriteLine("\nAperte qualquer coisa para continuar.");
                         Console.ReadKey();
@@ -93,6 +93,13 @@ namespace P_PilhaDinamica
                     }
                     aux = aux.Anterior;
                 } while (aux != null);
+                if(!achou)
+                    Console.WriteLine("Livro nao localizado com esse titulo: " + titulo);
+                else
+                    Console.WriteLine("Fim da busca.");
+
+                Console.WriteLine("\nAperte qualquer coisa para continuar.");
+                Console.ReadKey();
             }
         }
 
