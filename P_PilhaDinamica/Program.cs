@@ -68,7 +68,7 @@ namespace P_PilhaDinamica
 
                         case "5":
                             Console.Clear();
-                            LocalizarLivro();
+                            LocalizarLivro(minhaPilha);
                             break;
                     }
                 }
@@ -104,9 +104,12 @@ namespace P_PilhaDinamica
             Console.ReadKey();
         }
 
-        static void LocalizarLivro()
+        static void LocalizarLivro(PilhaLivros minhaPilha)
         {
-
+            string titulo;
+            Console.WriteLine("Informe o titulo que deseja localizar:");
+            titulo = Console.ReadLine();
+            minhaPilha.FindTitulo(titulo);
         }
     }
 }

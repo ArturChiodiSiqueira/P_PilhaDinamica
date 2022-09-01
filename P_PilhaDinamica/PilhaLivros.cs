@@ -73,6 +73,29 @@ namespace P_PilhaDinamica
             }
         }
 
+        public void FindTitulo(string titulo)
+        {
+            if (Vazia())
+                Console.WriteLine("Pilha Vazia!");
+            else
+            {
+                Livro aux = TOPO;
+                bool achou = false;
+                do
+                {
+                    if (aux.Titulo == titulo)
+                    {
+                        Console.WriteLine("Livro localizado:");
+                        Console.WriteLine(aux.ToString());
+                        Console.WriteLine("\nAperte qualquer coisa para continuar.");
+                        Console.ReadKey();
+                        achou = true;
+                    }
+                    aux = aux.Anterior;
+                } while (aux != null);
+            }
+        }
+
         private bool Vazia()
         {
             if (TOPO == null)
