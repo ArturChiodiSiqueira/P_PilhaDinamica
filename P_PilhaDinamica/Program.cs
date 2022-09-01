@@ -9,6 +9,7 @@ namespace P_PilhaDinamica
             PilhaLivros minhaPilha = new PilhaLivros();
 
             minhaPilha.Print();
+            Console.ReadKey();
 
             Livro livro = new Livro("A volta dos que não foram!", 1234, "Alexandre");
             minhaPilha.Push(livro);
