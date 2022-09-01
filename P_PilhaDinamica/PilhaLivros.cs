@@ -55,6 +55,24 @@ namespace P_PilhaDinamica
             }
         }
 
+        public void Length()
+        {
+            int contador = 0;
+            if (Vazia())
+                Console.WriteLine("Pilha Vazia!");
+            else
+            {
+                Livro aux = TOPO;
+                do
+                {
+                    contador++;
+                    aux = aux.Anterior;
+
+                } while (aux != null);
+                Console.WriteLine("A pilha tem " + contador + " livro(s).");
+            }
+        }
+
         private bool Vazia()
         {
             if (TOPO == null)

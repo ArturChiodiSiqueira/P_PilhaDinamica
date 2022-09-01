@@ -63,7 +63,7 @@ namespace P_PilhaDinamica
 
                         case "4":
                             Console.Clear();
-                            ImprimirQuantidadeLivro();
+                            ImprimirQuantidadeLivro(minhaPilha);
                             break;
 
                         case "5":
@@ -97,9 +97,11 @@ namespace P_PilhaDinamica
             Console.ReadKey();
         }
 
-        static void ImprimirQuantidadeLivro()
+        static void ImprimirQuantidadeLivro(PilhaLivros minhaPilha)
         {
-
+            minhaPilha.Length();
+            Console.WriteLine("\nAperte qualquer coisa para voltar ao menu.");
+            Console.ReadKey();
         }
 
         static void LocalizarLivro()
