@@ -8,27 +8,104 @@ namespace P_PilhaDinamica
         {
             PilhaLivros minhaPilha = new PilhaLivros();
 
-            minhaPilha.Print();
-            Console.ReadKey();
+            Menu(minhaPilha);
+        }
+        static void Menu(PilhaLivros minhaPilha)
+        {
+            string opcao;
 
-            Livro livro = new Livro("A volta dos que não foram!", 1234, "Alexandre");
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("\n\tDENTRE AS OPÇÕES NO MENU, QUAL DESEJA EXECUTAR?\n");
+                Console.WriteLine("\t|°°°°°°°°°°°°°°°°°°°°°°  MENU  °°°°°°°°°°°°°°°°°°°°°°°°|");
+                Console.WriteLine("\t|   opção 0 : sair                                     |");
+                Console.WriteLine("\t|                                                      |");
+                Console.WriteLine("\t|   opção 1 : inserir livro na pilha                   |");
+                Console.WriteLine("\t|   opção 2 : remover livro da pilha                   |");
+                Console.WriteLine("\t|   opção 3 : imprimir a pilha                         |");
+                Console.WriteLine("\t|   opção 4 : imprimir a quantidade de livros da pilha |");
+                Console.WriteLine("\t|   opção 5 : localizar um livro na pilha              |");
+                Console.WriteLine("\t|______________________________________________________|");
+
+                Console.Write("\n\tInforme a opcao: ");
+                opcao = Console.ReadLine();
+                Console.Beep();
+
+                if (opcao != "0" && opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "5")
+                {
+                    Console.WriteLine("'" + opcao + "' é uma opcao INVALIDA! Para voltar ao MENU, pressione QUALQUER TECLA!");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+
+                else
+                {
+                    switch (opcao)
+                    {
+                        case "0":
+                            Console.WriteLine("\nVOCÊ ESCOLHEU SAIR.");
+                            break;
+                        case "1":
+                            Console.Clear();
+                            InserirLivro(minhaPilha);
+                            break;
+
+                        case "2":
+                            Console.Clear();
+                            RemoverLivro(minhaPilha);
+                            break;
+
+                        case "3":
+                            Console.Clear();
+                            ImprimirPilha(minhaPilha);
+                            break;
+
+                        case "4":
+                            Console.Clear();
+                            ImprimirQuantidadeLivro();
+                            break;
+
+                        case "5":
+                            Console.Clear();
+                            LocalizarLivro();
+                            break;
+                    }
+                }
+            } while (opcao != "0");
+        }
+
+        static void InserirLivro(PilhaLivros minhaPilha)
+        {
+            Livro livro = new Livro();
             minhaPilha.Push(livro);
-
-            minhaPilha.Push(new Livro("Poeira em alto mar!", 4321, "Baratão"));
-
-            minhaPilha.Print();
+            Console.WriteLine("\nAperte qualquer coisa para voltar ao menu.");
             Console.ReadKey();
+        }
 
+        static void RemoverLivro(PilhaLivros minhaPilha)
+        {
             minhaPilha.Pop();
-            minhaPilha.Print();
+            Console.WriteLine("\nAperte qualquer coisa para voltar ao menu.");
             Console.ReadKey();
+        }
 
-            minhaPilha.Pop();
+        static void ImprimirPilha(PilhaLivros minhaPilha)
+        {
             minhaPilha.Print();
+            Console.WriteLine("\nAperte qualquer coisa para voltar ao menu.");
             Console.ReadKey();
+        }
 
-            minhaPilha.Pop();
-            Console.ReadKey();
+        static void ImprimirQuantidadeLivro()
+        {
+
+        }
+
+        static void LocalizarLivro()
+        {
+
         }
     }
 }
+

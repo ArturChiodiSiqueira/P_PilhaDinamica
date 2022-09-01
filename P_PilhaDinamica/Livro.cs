@@ -13,17 +13,23 @@ namespace P_PilhaDinamica
         public string Autor { get; set; }
         public Livro Anterior { get; set; }
 
-        public Livro(string titulo, int isbn, string autor)
+        public Livro()
         {
-            Titulo = titulo;
-            ISBN = isbn;
-            Autor = autor;
+            Console.Write("Informe o título: ");
+            Titulo = Console.ReadLine();
+
+            Console.Write("Informe o ISBN: ");
+            ISBN = int.Parse(Console.ReadLine());
+
+            Console.Write("Informe o autor: ");
+            Autor = Console.ReadLine();
+
             Anterior = null;
         }
 
         public override string ToString()
         {
-            return "\nDados do livro:\nTitulo: " + this.Titulo + "\nAutor: " + this.Autor + "\nISBN: " + this.ISBN;
+            return "\nDados do livro:\nTitulo: " + Titulo + "\nAutor: " + Autor + "\nISBN: " + ISBN;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace P_PilhaDinamica
             }
         }
 
-        public void Print()
+        public void Print()//para mostrar
         {
             if (Vazia())
                 Console.WriteLine("Pilha Vazia!");
@@ -47,10 +47,11 @@ namespace P_PilhaDinamica
         public void Pop()//para remover
         {
             if (Vazia())
-                Console.WriteLine("Pilha Vazia! Impossivel remover");
+                Console.WriteLine("Pilha Vazia! Impossivel remover.");
             else
             {
                 TOPO = TOPO.Anterior;
+                Console.WriteLine("Livro removido!");
             }
         }
 
