@@ -16,6 +16,18 @@ namespace P_PilhaDinamica
             minhaPilha.Push(new Livro("Poeira em alto mar!", 4321, "Baratão"));
 
             minhaPilha.Print();
+            Console.ReadKey();
+
+            minhaPilha.Pop();
+            minhaPilha.Print();
+            Console.ReadKey();
+
+            minhaPilha.Pop();
+            minhaPilha.Print();
+            Console.ReadKey();
+
+            minhaPilha.Pop();
+            Console.ReadKey();
         }
     }
 }

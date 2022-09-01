@@ -16,7 +16,7 @@ namespace P_PilhaDinamica
             Console.WriteLine("Pilha criada com sucesso!\n");
         }
 
-        public void Push(Livro aux)
+        public void Push(Livro aux)//para inserir
         {
             if (Vazia())
                 TOPO = aux;
@@ -40,7 +40,17 @@ namespace P_PilhaDinamica
                     aux = aux.Anterior;
 
                 } while (aux != null);
-                Console.WriteLine("\nFIN DA IMPRESSÃO!");
+                Console.WriteLine("\nFIM DA IMPRESSÃO!");
+            }
+        }
+
+        public void Pop()//para remover
+        {
+            if (Vazia())
+                Console.WriteLine("Pilha Vazia! Impossivel remover");
+            else
+            {
+                TOPO = TOPO.Anterior;
             }
         }
 
