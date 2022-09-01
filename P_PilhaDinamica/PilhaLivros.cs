@@ -8,8 +8,12 @@ namespace P_PilhaDinamica
 {
     internal class PilhaLivros
     {
-        public Livro Topo { get; set; }
+        public Livro TOPO { get; set; }
 
-
+        public PilhaLivros()
+        {
+            TOPO = null;
+            Console.WriteLine("pilha criada com sucesso!");
+        }
     }
 }
